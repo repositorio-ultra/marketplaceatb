@@ -1,0 +1,18 @@
+version: "3.9"
+services: 
+  mysql-server:
+    image: mysql:5.7.29
+    command: mysqld --sql_mode=""
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    tty: true
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: marketplaceatb
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 
+volumes:
+  db_data:
